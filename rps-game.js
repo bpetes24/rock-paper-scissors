@@ -23,8 +23,6 @@ function getComputerChoice() {
     return choice;
 } //getComputerChoice
 
-console.log(getComputerChoice());
-
 /*
 * Write function: getHumanChoice
 * Returns “rock”, “paper”, or “scissors” string values depending on user input
@@ -47,8 +45,6 @@ function getHumanChoice() {
     return validInput;
 } //getHumanChoice
 
-console.log(getHumanChoice());
-
 /*
 * Write function: playRound
 * Define two parameters to take players’ choices as arguments: humanChoice and computerChoice
@@ -59,6 +55,7 @@ console.log(getHumanChoice());
 */
 function playRound(humanChoice, computerChoice) {
     //Insert console.log() statements for rock, paper, scissors round start
+    console.log("Player chose " + humanChoice + ", and the computer chose " + computerChoice + ".");
     if (humanChoice === computerChoice) {
         console.log("It's a tie! Both chose " + humanChoice + ".");
         computerScore++;
