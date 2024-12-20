@@ -28,5 +28,8 @@ console.log(getComputerChoice());
 * Test function using console.log
 */
 function getHumanChoice() {
-    //Insert code here
+    //Declare string variable that equals user input
+    //Convert input to lower case string
+    //Check for invalid inputs (i.e., not rock, paper, scissors)
+    //Return variable
 } //getHumanChoice
