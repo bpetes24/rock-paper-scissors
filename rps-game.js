@@ -23,8 +23,6 @@ function getComputerChoice() {
     return choice;
 } //getComputerChoice
 
-console.log(getComputerChoice());
-
 /*
 * Write function: getHumanChoice
 * Returns “rock”, “paper”, or “scissors” string values depending on user input
@@ -47,8 +45,6 @@ function getHumanChoice() {
     return validInput;
 } //getHumanChoice
 
-console.log(getHumanChoice());
-
 /*
 * Write function: playRound
 * Define two parameters to take players’ choices as arguments: humanChoice and computerChoice
@@ -58,7 +54,32 @@ console.log(getHumanChoice());
 * Increment humanScore or computerScore variables by one based on round winner
 */
 function playRound(humanChoice, computerChoice) {
-   //Insert code here
+    console.log("Rock, paper, scissors...shoot!");
+    console.log("Player chose " + humanChoice + ", and the computer chose " + computerChoice + ".");
+    if (humanChoice === computerChoice) {
+        console.log("It's a tie! Both chose " + humanChoice + ".");
+        computerScore++;
+        humanScore++;
+    } else if ((humanChoice === "rock") && (computerChoice === "paper")) {
+        console.log("You lose! Paper beats rock.");
+        computerScore++;
+    } else if ((humanChoice === "rock") && (computerChoice === "scissors")) {
+        console.log("You win! Rock beats scissors.");
+        humanScore++;
+    } else if ((humanChoice === "paper") && (computerChoice === "rock")) {
+        console.log("You win! Paper beats rock.");
+        humanScore++;
+    } else if ((humanChoice === "paper") && (computerChoice === "scissors")) {
+        console.log("You lose! Scissors beats paper.");
+        computerScore++;
+    } else if ((humanChoice === "scissors") && (computerChoice === "rock")) {
+        console.log("You lose! Rock beats scissors.");
+        computerScore++;
+    } else if ((humanChoice === "scissors") && (computerChoice === "paper")) {
+        console.log("You win! Scissors beats paper.");
+        humanScore++;
+    } //if
+    console.log("Player: " + humanScore + " Computer: " + computerScore);
 } //playRound
 
 const humanSelection = getHumanChoice(); //Stores player input
