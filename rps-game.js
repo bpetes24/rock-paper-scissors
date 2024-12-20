@@ -6,7 +6,16 @@
 * Test function using console.log
 */
 function getComputerChoice() {
-    //Insert code here
+    let rng = Math.floor(Math.random() * 3 + 1);
+    let choice; //Empty string variable
+    if (rng == 1) {
+        choice = "rock";
+    } else if (rng == 2) {
+        choice = "paper";
+    } else if (rng == 3) {
+        choice = "scissors";
+    } //if
+    return choice;
 } //getComputerChoice
 
 console.log(getComputerChoice());
