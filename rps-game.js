@@ -52,16 +52,16 @@ console.log(getHumanChoice());
 /*
 * Write function: playRound
 * Define two parameters to take players’ choices as arguments: humanChoice and computerChoice
-* Make humanChoice parameter case-insensitive (i.e., can enter “rock”, “ROCK”, or “Rock”, etc.)
+* Make humanChoice parameter case-insensitive (i.e., can enter “rock”, “ROCK”, or “Rock”, etc.) - DONE in getHumanChoice()
 * Include console.log for string value with victory/defeat message (e.g., “You lose! Paper beats Rock.”)
 * NOTE: Need to pass string values for players’ choices into message for “rock”, “paper”, and “scissors”
 * Increment humanScore or computerScore variables by one based on round winner
 */
 function playRound(humanChoice, computerChoice) {
-    //Insert code here
+   //Insert code here
 } //playRound
 
 const humanSelection = getHumanChoice(); //Stores player input
-const computerSelection = getComputerChoice(); //Stores computer choice
+const computerSelection = getComputerChoice(); //Stores computer
 
 playRound(humanSelection, computerSelection); //Play one round of the game
