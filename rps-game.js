@@ -54,7 +54,7 @@ function getHumanChoice() {
 * Increment humanScore or computerScore variables by one based on round winner
 */
 function playRound(humanChoice, computerChoice) {
-    //Insert console.log() statements for rock, paper, scissors round start
+    console.log("Rock, paper, scissors...shoot!");
     console.log("Player chose " + humanChoice + ", and the computer chose " + computerChoice + ".");
     if (humanChoice === computerChoice) {
         console.log("It's a tie! Both chose " + humanChoice + ".");
@@ -79,16 +79,8 @@ function playRound(humanChoice, computerChoice) {
         console.log("You win! Scissors beats paper.");
         humanScore++;
     } //if
-    printScore();
+    console.log("Player: " + humanScore + " Computer: " + computerScore);
 } //playRound
-
-/*
-* Prints the current game score for the player and computer
-*/
-function printScore() {
-    let s = console.log("Player: " + humanScore + " Computer: " + computerScore);
-    return s;
-} //printScore
 
 const humanSelection = getHumanChoice(); //Stores player input
 const computerSelection = getComputerChoice(); //Stores computer choice
