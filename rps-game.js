@@ -30,7 +30,16 @@ console.log(getComputerChoice());
 function getHumanChoice() {
     //Declare string variable that equals user input
     let input = prompt("Enter rock, paper, or scissors to play");
-    input.toLowerCase().trim(); //Convert input to lower case string and trims whitespace
+    input = input.trim(); //Trims whitespace from input
+    input = input.toLowerCase(); //Convert input to lower case string
     //Check for invalid inputs (i.e., not rock, paper, scissors)
-    return input;
+    let validInput;
+    if ((input === "rock") || (input === "paper") || (input === "scissors")) {
+        validInput = input;
+    } else {
+        console.log("Invalid input. Please refresh and try again");
+    } //if
+    return validInput;
 } //getHumanChoice
+
+console.log(getHumanChoice());
