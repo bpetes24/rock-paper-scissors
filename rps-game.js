@@ -58,8 +58,37 @@ console.log(getHumanChoice());
 * Increment humanScore or computerScore variables by one based on round winner
 */
 function playRound(humanChoice, computerChoice) {
-    //Insert code here
+    //Insert console.log() statements for rock, paper, scissors round start
+    if ((humanChoice === "rock") && (computerChoice === "rock")) {
+        computerScore++;
+        humanScore++;
+        //Insert printTie function
+    } else if ((humanChoice === "rock") && (computerChoice === "paper")) {
+        //Insert printLoss function
+    } else if ((humanChoice === "rock") && (computerChoice === "scissors")) {
+        //Insert printWin function
+    } else if ((humanChoice === "paper") && (computerChoice === "rock")) {
+        //Insert printWin function
+    } else if ((humanChoice === "paper") && (computerChoice === "paper")) {
+        //Insert printTie function
+    } else if ((humanChoice === "paper") && (computerChoice === "scissors")) {
+        //Insert printLoss function
+    } else if ((humanChoice === "scissors") && (computerChoice === "rock")) {
+        //Insert printLoss function
+    } else if ((humanChoice === "scissors") && (computerChoice === "paper")) {
+        //Insert printWin function
+    } else if ((humanChoice === "scissors") && (computerChoice === "scissors")) {
+        //Insert printTie function
+    } //if
 } //playRound
+
+/*
+* Prints the current game score for the player and computer
+*/
+function printScore() {
+    let s = console.log("Player: " + humanScore + " Computer: " + computerScore);
+    return s;
+} //printScore
 
 const humanSelection = getHumanChoice(); //Stores player input
 const computerSelection = getComputerChoice(); //Stores computer choice
