@@ -60,3 +60,8 @@ console.log(getHumanChoice());
 function playRound(humanChoice, computerChoice) {
     //Insert code here
 } //playRound
+
+const humanSelection = getHumanChoice(); //Stores player input
+const computerSelection = getComputerChoice(); //Stores computer choice
+
+playRound(humanSelection, computerSelection); //Play one round of the game
