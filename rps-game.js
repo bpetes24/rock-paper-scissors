@@ -60,26 +60,37 @@ console.log(getHumanChoice());
 function playRound(humanChoice, computerChoice) {
     //Insert console.log() statements for rock, paper, scissors round start
     if ((humanChoice === "rock") && (computerChoice === "rock")) {
+        console.log("It's a tie! Both chose rock.");
         computerScore++;
         humanScore++;
-        //Insert printTie function
     } else if ((humanChoice === "rock") && (computerChoice === "paper")) {
-        //Insert printLoss function
+        console.log("You lose! Paper beats rock.");
+        computerScore++;
     } else if ((humanChoice === "rock") && (computerChoice === "scissors")) {
-        //Insert printWin function
+        console.log("You win! Rock beats scissors.");
+        humanScore++;
     } else if ((humanChoice === "paper") && (computerChoice === "rock")) {
-        //Insert printWin function
+        console.log("You win! Paper beats rock.");
+        humanScore++;
     } else if ((humanChoice === "paper") && (computerChoice === "paper")) {
-        //Insert printTie function
+        console.log("It's a tie! Both chose paper.");
+        computerScore++;
+        humanScore++;
     } else if ((humanChoice === "paper") && (computerChoice === "scissors")) {
-        //Insert printLoss function
+        console.log("You lose! Scissors beats paper.");
+        computerScore++;
     } else if ((humanChoice === "scissors") && (computerChoice === "rock")) {
-        //Insert printLoss function
+        console.log("You lose! Rock beats scissors.");
+        computerScore++;
     } else if ((humanChoice === "scissors") && (computerChoice === "paper")) {
-        //Insert printWin function
+        console.log("You win! Scissors beats paper.");
+        humanScore++;
     } else if ((humanChoice === "scissors") && (computerChoice === "scissors")) {
-        //Insert printTie function
+        console.log("It's a tie! Both chose scissors.");
+        computerScore++;
+        humanScore++;
     } //if
+    printScore();
 } //playRound
 
 /*
