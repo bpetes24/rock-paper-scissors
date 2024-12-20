@@ -1,4 +1,9 @@
 //JS file for running Rock, Paper, Scissors
+
+//Create two variables to keep score: humanScore and computerScore
+let computerScore = 0;
+let humanScore = 0;
+
 /*
 * Write function: getComputerChoice
 * Randomly returns “rock”, “paper”, or “scissors” string values
