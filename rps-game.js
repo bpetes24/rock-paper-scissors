@@ -19,3 +19,14 @@ function getComputerChoice() {
 } //getComputerChoice
 
 console.log(getComputerChoice());
+
+/*
+* Write function: getHumanChoice
+* Returns “rock”, “paper”, or “scissors” string values depending on user input
+* NOTE: Need to check for invalid inputs (i.e., other than “rock”, “paper”, and “scissors”) 
+* Hint: use prompt method to obtain user input
+* Test function using console.log
+*/
+function getHumanChoice() {
+    //Insert code here
+} //getHumanChoice
