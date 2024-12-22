@@ -1,9 +1,5 @@
 //JS file for running Rock, Paper, Scissors
 
-//Create two variables to keep score: humanScore and computerScore
-let computerScore = 0;
-let humanScore = 0;
-
 /*
 * Write function: getComputerChoice
 * Randomly returns “rock”, “paper”, or “scissors” string values
@@ -85,4 +81,20 @@ function playRound(humanChoice, computerChoice) {
 const humanSelection = getHumanChoice(); //Stores player input
 const computerSelection = getComputerChoice(); //Stores computer
 
-playRound(humanSelection, computerSelection); //Play one round of the game
+/*
+* Runs the game for five rounds until a player wins five rounds
+*/
+function playGame() {
+    const humanSelection = getHumanChoice(); //Stores player input
+    const computerSelection = getComputerChoice(); //Stores computer choice
+
+    //Create two variables to keep score: humanScore and computerScore
+    let computerScore = 0;
+    let humanScore = 0;
+
+    while ((computerScore != 5) || (humanScore != 5)) {
+        playRound(humanSelection, computerSelection); //Play one round of the game 
+    } //while
+} //playGame
+
+playGame(); //Calls the game
