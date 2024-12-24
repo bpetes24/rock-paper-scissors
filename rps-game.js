@@ -1,5 +1,62 @@
 //JS file for running Rock, Paper, Scissors
 
+//Create two variables to keep score: humanScore and computerScore
+let computerScore = 0;
+let humanScore = 0;
+
+const humanSelection = getHumanChoice(); //Stores player input
+const computerSelection = getComputerChoice(); //Stores computer
+
+playGame(); //Calls the game
+
+/*
+* Runs the game for five rounds until a player wins five rounds
+*/
+function playGame() {
+    while ((computerScore != 5) || (humanScore != 5)) {
+        const humanSelection = getHumanChoice(); //Stores player input
+        const computerSelection = getComputerChoice(); //Stores computer
+        playRound(humanSelection, computerSelection); //Play one round of the game 
+    } //while
+} //playGame
+
+/*
+* Write function: playRound
+* Define two parameters to take players’ choices as arguments: humanChoice and computerChoice
+* Make humanChoice parameter case-insensitive (i.e., can enter “rock”, “ROCK”, or “Rock”, etc.) - DONE in getHumanChoice()
+* Include console.log for string value with victory/defeat message (e.g., “You lose! Paper beats Rock.”)
+* NOTE: Need to pass string values for players’ choices into message for “rock”, “paper”, and “scissors”
+* Increment humanScore or computerScore variables by one based on round winner
+*/
+function playRound(humanChoice, computerChoice) {
+    console.log("Rock, paper, scissors...shoot!");
+    console.log("Player chose " + humanChoice + ", and the computer chose " + computerChoice + ".");
+    if (humanChoice === computerChoice) {
+        console.log("It's a tie! Both chose " + humanChoice + ".");
+        computerScore++;
+        humanScore++;
+    } else if ((humanChoice === "rock") && (computerChoice === "paper")) {
+        console.log("You lose! Paper beats rock.");
+        computerScore++;
+    } else if ((humanChoice === "rock") && (computerChoice === "scissors")) {
+        console.log("You win! Rock beats scissors.");
+        humanScore++;
+    } else if ((humanChoice === "paper") && (computerChoice === "rock")) {
+        console.log("You win! Paper beats rock.");
+        humanScore++;
+    } else if ((humanChoice === "paper") && (computerChoice === "scissors")) {
+        console.log("You lose! Scissors beats paper.");
+        computerScore++;
+    } else if ((humanChoice === "scissors") && (computerChoice === "rock")) {
+        console.log("You lose! Rock beats scissors.");
+        computerScore++;
+    } else if ((humanChoice === "scissors") && (computerChoice === "paper")) {
+        console.log("You win! Scissors beats paper.");
+        humanScore++;
+    } //if
+    console.log("Player: " + humanScore + " Computer: " + computerScore);
+} //playRound
+
 /*
 * Write function: getComputerChoice
 * Randomly returns “rock”, “paper”, or “scissors” string values
@@ -40,61 +97,3 @@ function getHumanChoice() {
     } //if
     return validInput;
 } //getHumanChoice
-
-/*
-* Write function: playRound
-* Define two parameters to take players’ choices as arguments: humanChoice and computerChoice
-* Make humanChoice parameter case-insensitive (i.e., can enter “rock”, “ROCK”, or “Rock”, etc.) - DONE in getHumanChoice()
-* Include console.log for string value with victory/defeat message (e.g., “You lose! Paper beats Rock.”)
-* NOTE: Need to pass string values for players’ choices into message for “rock”, “paper”, and “scissors”
-* Increment humanScore or computerScore variables by one based on round winner
-*/
-function playRound(humanChoice, computerChoice) {
-    console.log("Rock, paper, scissors...shoot!");
-    console.log("Player chose " + humanChoice + ", and the computer chose " + computerChoice + ".");
-    if (humanChoice === computerChoice) {
-        console.log("It's a tie! Both chose " + humanChoice + ".");
-        computerScore++;
-        humanScore++;
-    } else if ((humanChoice === "rock") && (computerChoice === "paper")) {
-        console.log("You lose! Paper beats rock.");
-        computerScore++;
-    } else if ((humanChoice === "rock") && (computerChoice === "scissors")) {
-        console.log("You win! Rock beats scissors.");
-        humanScore++;
-    } else if ((humanChoice === "paper") && (computerChoice === "rock")) {
-        console.log("You win! Paper beats rock.");
-        humanScore++;
-    } else if ((humanChoice === "paper") && (computerChoice === "scissors")) {
-        console.log("You lose! Scissors beats paper.");
-        computerScore++;
-    } else if ((humanChoice === "scissors") && (computerChoice === "rock")) {
-        console.log("You lose! Rock beats scissors.");
-        computerScore++;
-    } else if ((humanChoice === "scissors") && (computerChoice === "paper")) {
-        console.log("You win! Scissors beats paper.");
-        humanScore++;
-    } //if
-    console.log("Player: " + humanScore + " Computer: " + computerScore);
-} //playRound
-
-const humanSelection = getHumanChoice(); //Stores player input
-const computerSelection = getComputerChoice(); //Stores computer
-
-/*
-* Runs the game for five rounds until a player wins five rounds
-*/
-function playGame() {
-    const humanSelection = getHumanChoice(); //Stores player input
-    const computerSelection = getComputerChoice(); //Stores computer choice
-
-    //Create two variables to keep score: humanScore and computerScore
-    let computerScore = 0;
-    let humanScore = 0;
-
-    while ((computerScore != 5) || (humanScore != 5)) {
-        playRound(humanSelection, computerSelection); //Play one round of the game 
-    } //while
-} //playGame
-
-playGame(); //Calls the game
