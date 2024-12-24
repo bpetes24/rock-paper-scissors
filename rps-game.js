@@ -1,20 +1,31 @@
 //JS file for running Rock, Paper, Scissors
 
 //Create two variables to keep score: humanScore and computerScore
-let computerScore = 0;
-let humanScore = 0;
+let computerScore;
+let humanScore;
 
 playGame(); //Calls the game
 
 /*
-* Runs the game for five rounds until a player wins five rounds
+* Runs the game for five rounds then declares a winner based on the final score
 */
 function playGame() {
-    while ((computerScore != 5) || (humanScore != 5)) {
+    computerScore = 0;
+    humanScore = 0;
+    for (let i = 0; i < 5; i++) {
         let humanSelection = getHumanChoice(); //Stores player input
         let computerSelection = getComputerChoice(); //Stores computer
-        playRound(humanSelection, computerSelection); //Play one round of the game 
-    } //while
+        playRound(humanSelection, computerSelection); //Plays one round of the game 
+    } //for
+    if (computerScore > humanScore) {
+        console.log("You lose the game!");
+    } else if (humanScore > computerScore) {
+        console.log("You win the game!");
+    } else if (humanScore == computerScore) {
+        console.log("It's a tie game!");
+    } //if
+    console.log("Final Score");
+    console.log("Player: " + humanScore + " Computer: " + computerScore);
 } //playGame
 
 /*
@@ -55,25 +66,6 @@ function playRound(humanChoice, computerChoice) {
 } //playRound
 
 /*
-* Write function: getComputerChoice
-* Randomly returns “rock”, “paper”, or “scissors” string values
-* Hint: use Math.random method (returns random number x>=0 && x<1)
-* Test function using console.log
-*/
-function getComputerChoice() {
-    let rng = Math.floor(Math.random() * 3 + 1);
-    let choice; //Empty string variable
-    if (rng == 1) {
-        choice = "rock";
-    } else if (rng == 2) {
-        choice = "paper";
-    } else if (rng == 3) {
-        choice = "scissors";
-    } //if
-    return choice;
-} //getComputerChoice
-
-/*
 * Write function: getHumanChoice
 * Returns “rock”, “paper”, or “scissors” string values depending on user input
 * NOTE: Need to check for invalid inputs (i.e., other than “rock”, “paper”, and “scissors”) 
@@ -94,3 +86,22 @@ function getHumanChoice() {
     } //if
     return validInput;
 } //getHumanChoice
+
+/*
+* Write function: getComputerChoice
+* Randomly returns “rock”, “paper”, or “scissors” string values
+* Hint: use Math.random method (returns random number x>=0 && x<1)
+* Test function using console.log
+*/
+function getComputerChoice() {
+    let rng = Math.floor(Math.random() * 3 + 1);
+    let choice; //Empty string variable
+    if (rng == 1) {
+        choice = "rock";
+    } else if (rng == 2) {
+        choice = "paper";
+    } else if (rng == 3) {
+        choice = "scissors";
+    } //if
+    return choice;
+} //getComputerChoice
