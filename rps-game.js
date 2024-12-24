@@ -4,9 +4,6 @@
 let computerScore = 0;
 let humanScore = 0;
 
-const humanSelection = getHumanChoice(); //Stores player input
-const computerSelection = getComputerChoice(); //Stores computer
-
 playGame(); //Calls the game
 
 /*
@@ -14,8 +11,8 @@ playGame(); //Calls the game
 */
 function playGame() {
     while ((computerScore != 5) || (humanScore != 5)) {
-        const humanSelection = getHumanChoice(); //Stores player input
-        const computerSelection = getComputerChoice(); //Stores computer
+        let humanSelection = getHumanChoice(); //Stores player input
+        let computerSelection = getComputerChoice(); //Stores computer
         playRound(humanSelection, computerSelection); //Play one round of the game 
     } //while
 } //playGame
